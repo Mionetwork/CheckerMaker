@@ -130,11 +130,11 @@ class Ui_CheckerMaker(object):
                     self.rsayi += 1
         elif str(textboxValue).lower() == "post":
                 if self.rsayi == 0:
-                    self.istek += f'    r1 = requests.{textboxValue}("{textboxValue2}",data={textboxValue3},headers={self.headerss})\n'
+                    self.istek += f'    r1 = requests.{textboxValue}("{textboxValue2}",data=f"{textboxValue3}",headers={self.headerss})\n'
                     self.rsayi += 1
                 else:
                     self.rsayi += 1
-                    self.istek += f'    r{self.rsayi+1} = requests.{textboxValue}("{textboxValue2}",data={textboxValue3},headers={self.headerss})\n'
+                    self.istek += f'    r{self.rsayi+1} = requests.{textboxValue}("{textboxValue2}",data=f"{textboxValue3}",headers={self.headerss})\n'
         os.system("cls")
         print(self.istek)
         self.plainTextEdit2.setPlainText(self.istek)
@@ -182,7 +182,7 @@ class Ui_CheckerMaker(object):
             os.remove("cracking.py")
         except:
             pass
-        file216 = open("cracking.py","a+")
+        file216 = open("cracking.py","w")
         file216.write(f"""
 import requests
 import threading
