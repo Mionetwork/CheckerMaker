@@ -149,7 +149,7 @@ class Ui_CheckerMaker(object):
 """
         else:
                 self.istek += f"""
-     koko216 = r{self.rsayi}.text.split('{right}')[1].split('{left}')[0] 
+     koko216 = r{self.rsayi}.text.split('{left}')[1].split('{right}')[0] 
 """
         os.system("cls")
         self.plainTextEdit2.setPlainText(self.istek)
